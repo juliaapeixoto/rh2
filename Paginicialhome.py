@@ -1,8 +1,7 @@
 import pygame
 import sys
 from definitions import *
-
-
+from niveis import *
 from pagtab6 import *
 from definitions import * 
 from RH_Board import *
@@ -68,19 +67,19 @@ def tab_6modofacil(screen):
                 if tab6_botaoparavoltaratras.checkForInput(posicao_do_rato):
                     play(screen)
                 elif LEVEL1_BUTTON.checkForInput(posicao_do_rato):                         
-                    game = pagtab6(screen, 'LEVEL 1', level1_pieces, RushHourBoard, search_method.choose, max_depth_options.depth)
+                    game = outrapags(screen, 'LEVEL 1', level1_pieces, RushHourBoard, search_method.choose, max_depth_options.depth)
                     tab6_botaoparavoltaratras(screen, game)
                 elif LEVEL2_BUTTON.checkForInput(posicao_do_rato):                         
-                    game = pagtab6(screen, 'LEVEL 2', level2_pieces, RushHourBoard, search_method.choose, max_depth_options.depth)
+                    game = outrapags(screen, 'LEVEL 2', level2_pieces, RushHourBoard, search_method.choose, max_depth_options.depth)
                     tab6_botaoparavoltaratras(screen, game)
                 elif LEVEL3_BUTTON.checkForInput(posicao_do_rato):                         
-                    game = pagtab6(screen, 'LEVEL 3', level3_pieces, RushHourBoard, search_method.choose, max_depth_options.depth)
+                    game = outrapags(screen, 'LEVEL 3', level3_pieces, RushHourBoard, search_method.choose, max_depth_options.depth)
                     tab6_botaoparavoltaratras(screen, game)
                 elif LEVEL4_BUTTON.checkForInput(posicao_do_rato):                         
-                    game = pagtab6(screen, 'LEVEL 4', level4_pieces, RushHourBoard, search_method.choose, max_depth_options.depth)
+                    game = outrapags(screen, 'LEVEL 4', level4_pieces, RushHourBoard, search_method.choose, max_depth_options.depth)
                     tab6_botaoparavoltaratras(screen, game)
                 elif LEVEL5_BUTTON.checkForInput(posicao_do_rato):                         
-                    game = pagtab6(screen, 'LEVEL 5', level5_pieces, RushHourBoard, search_method.choose, max_depth_options.depth)
+                    game = outrapags(screen, 'LEVEL 5', level5_pieces, RushHourBoard, search_method.choose, max_depth_options.depth)
                     tab6_botaoparavoltaratras(screen, game)
 
         pygame.display.update()
@@ -285,7 +284,7 @@ def options_methods (screen, depth_options, breadth_options, a_star_options, gre
         OPTIONS_BACK.changeColor(OPTIONS_MOUSE_POS)
         OPTIONS_BACK.update(screen)       
 
-        update_search_method(search_method)
+        atualizar_search_method(search_method)
         pygame.display.update()
 
 
@@ -315,7 +314,7 @@ def main_menu(screen, depth_options, breadth_options, a_star_options, greedy_opt
                 if CLICA_PARA_JOGAR.checkForInput(MENU_MOUSE_POS):
                     play(screen)
                 if OPTIONS_BUTTON.checkForInput(MENU_MOUSE_POS):
-                    options(screen, depth_options, breadth_options, a_star_options, greedy_options, max_depth_options, search_method)
+                    options_methods(screen, depth_options, breadth_options, a_star_options, greedy_options, max_depth_options, search_method)
                 if QUIT_BUTTON.checkForInput(MENU_MOUSE_POS):
                     pygame.quit()
                     sys.exit()
